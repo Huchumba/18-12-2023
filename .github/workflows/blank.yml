@@ -32,10 +32,7 @@ jobs:
 
       - name: Build
         run: |
-          cd node
           docker build -t ghcr.io/huchumba/380-node-app:1.0 .
-          cd .. 
-          cd python
           docker build -t ghcr.io/huchumba/380-python-app:1.0 .
 
       - name: login_in
