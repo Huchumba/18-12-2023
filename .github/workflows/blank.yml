@@ -37,9 +37,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-          docker build -t ghcr.io/huchumba/380-node-app:1.0 .
-          docker build -t ghcr.io/huchumba/380-python-app:1.0 .
+          docker build -t ghcr.io/huchumba/380-node-app:1.0 .node/
+
           docker push ghcr.io/huchumba/380-node-app:1.0
+                    
+          docker build -t ghcr.io/huchumba/380-python-app:1.0 .python/
+
           docker push ghcr.io/huchumba/380-python-app:1.0
 
 
